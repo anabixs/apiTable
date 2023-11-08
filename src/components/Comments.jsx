@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 export default function Comments({ props }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
@@ -25,3 +26,7 @@ export default function Comments({ props }) {
     </>
   );
 }
+
+Comments.propTypes = {
+  props: PropTypes.string.isRequired,
+};

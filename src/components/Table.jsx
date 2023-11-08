@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 export default function Table({ apiEndpoint, onItemSelect }) {
   const [list, setList] = useState([]);
   const [sortColumn, setSortColumn] = useState(null);
@@ -93,3 +94,7 @@ export default function Table({ apiEndpoint, onItemSelect }) {
     </table>
   );
 }
+Table.propTypes = {
+  apiEndpoint: PropTypes.string.isRequired,
+  onItemSelect: PropTypes.func.isRequired,
+};
